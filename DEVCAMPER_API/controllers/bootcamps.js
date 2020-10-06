@@ -34,6 +34,7 @@ exports.getBootcamp = async(req, res, next) => {
 // @access      Private
 exports.createBootcamp = async (req, res, next) => {
     try{
+        console.log("Entering createBootcamp Method");
         const bootcamp = await Bootcamp.create(req.body);
 
         res.status(201).json({
@@ -41,7 +42,7 @@ exports.createBootcamp = async (req, res, next) => {
             data: bootcamp
         });
     }
-    catch(err){
+    catch(error){
         next(error); 
     }
 } 
